@@ -2,6 +2,8 @@ package pl.spring.demo.aop;
 
 
 import org.springframework.aop.MethodBeforeAdvice;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import pl.spring.demo.annotation.NullableId;
@@ -10,7 +12,8 @@ import pl.spring.demo.to.IdAware;
 
 import java.lang.reflect.Method;
 
-@Service
+@Component
+@Qualifier("bookDaoAdvisor")
 public class BookDaoAdvisor implements MethodBeforeAdvice {
 
     @Override

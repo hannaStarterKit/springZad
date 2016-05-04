@@ -11,15 +11,15 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-@Service
 public class BookDaoImpl implements BookDao {
 
     private final Set<BookTo> ALL_BOOKS = new HashSet<>();
     
-    @Autowired
     private Sequence sequence;
     
     public BookDaoImpl() {
@@ -50,7 +50,8 @@ public class BookDaoImpl implements BookDao {
         ALL_BOOKS.add(book);
         return book;
     }
-
+    
+    @Autowired
     public void setSequence(Sequence sequence) {
         this.sequence = sequence;
     }
