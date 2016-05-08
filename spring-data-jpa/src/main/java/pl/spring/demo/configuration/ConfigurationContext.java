@@ -10,7 +10,7 @@ import pl.spring.demo.dao.impl.BookDaoImpl;
 @Configuration
 public class ConfigurationContext {
 
-	@Bean
+/*	@Bean
 	public ProxyFactoryBean proxy(Sequence sequence){
 		ProxyFactoryBean factory = new ProxyFactoryBean();
 		BookDaoImpl gh=new BookDaoImpl();
@@ -18,6 +18,6 @@ public class ConfigurationContext {
 		factory.setTarget(gh);
 		factory.setInterceptorNames("bookDaoAdvisor");
 		return factory;
-	}
+	}*/
 
 }
